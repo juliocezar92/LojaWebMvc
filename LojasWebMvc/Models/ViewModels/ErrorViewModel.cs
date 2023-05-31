@@ -1,4 +1,4 @@
-namespace LojasWebMvc.Models
+namespace LojasWebMvc.Models.ViewModels
 {
     public class ErrorViewModel
     {
