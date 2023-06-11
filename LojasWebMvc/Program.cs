@@ -3,7 +3,8 @@ using Microsoft.Extensions.DependencyInjection;
 using LojasWebMvc.Data;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<LojasWebMvcContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("LojasWebMvcContext") ?? throw new InvalidOperationException("Connection string 'LojasWebMvcContext' not found.")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("LojasWebMvcContext") ??
+    throw new InvalidOperationException("Connection string 'LojasWebMvcContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
