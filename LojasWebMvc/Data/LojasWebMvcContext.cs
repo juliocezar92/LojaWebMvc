@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using LojasWebMvc.Models;
 
-namespace LojasWebMvc.Data
+namespace LojasWebMvc.Models
 {
     public class LojasWebMvcContext : DbContext
     {
@@ -14,6 +14,8 @@ namespace LojasWebMvc.Data
         {
         }
 
-        public DbSet<LojasWebMvc.Models.Departamento> Departamento { get; set; } = default!;
+        public DbSet<Departamento> Departamento { get; set; } = default!;
+        public DbSet<Vendedor> Vendedor { get; set; } = default!;
+        public DbSet<RegistroDeVenda> RegistroDeVendas { get; set; } = default!;
     }
 }
