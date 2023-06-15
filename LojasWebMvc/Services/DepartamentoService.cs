@@ -1,4 +1,6 @@
 ﻿using LojasWebMvc.Models;
+using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace LojasWebMvc.Services
 {
@@ -12,9 +14,9 @@ namespace LojasWebMvc.Services
             _context = context;
         }
 
-        public List<Departamento> FindAll()
+        public async Task <List<Departamento>> FindAllAsync()
         {
-            return _context.Departamento.OrderBy(x => x.Name).ToList();
+            return await _context.Departamento.OrderBy(x => x.Name).ToListAsync();
         }
     }
 }

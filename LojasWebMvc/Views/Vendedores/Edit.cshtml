@@ -1,26 +1,17 @@
 ﻿@model LojasWebMvc.Models.ViewModels.VendedorFormViewModel
 @{
-    ViewData["Title"] = "Cadastrar novo vendedor";
+    ViewData["Title"] = "Editar vendedor";
 }
 <h2 class="title">@ViewData["title"]</h2>
 
-<style>
-    .title {
-        display: flex;
-        justify-content: center;
-    }
 
-    .voltar {
-        margin: auto 10px;
-    }
-</style>
 
 <h4>Vendedores</h4>
 <hr />
 <div class="row">
     <div class="col-md-8">
-        <form asp-action="Create">
-            <div asp-validation-summary="All" class="text-dander"></div>
+        <form asp-action="Edit">
+            <input type="hidden" asp-for="Vendedor.Id" />
             <div class="form-group">
                 <label asp-for="Vendedor.Name" class="cpntrol-label"></label>
                 <input asp-for="Vendedor.Name" class="form-control" />
@@ -46,10 +37,8 @@
                 <select asp-for="Vendedor.DepartamentoId" asp-items="@(new SelectList(Model.Departamentos, "Id",
                 "Name"))" class="form-control"></select>
             </div>
-            <br />
             <div class="form-group">
-                <input type="submit" valeu="Criar" class="btn btn-dark" />
-                
+                <input type="submit" valeu="Edit" class="btn btn-dark" />
             </div>
         </form>
         <a asp-action="Index" class="voltar">Voltar a Lista</a>

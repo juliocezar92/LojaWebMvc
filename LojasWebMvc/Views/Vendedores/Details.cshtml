@@ -1,0 +1,57 @@
+﻿@model LojasWebMvc.Models.Vendedor
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<style>
+    .title{
+        display:flex;
+        justify-content:center;
+    }
+    .voltar{
+        margin:auto 10px;
+    }
+</style>
+
+<h2 class="title">@ViewData["Title"]</h2>
+
+<div>
+    <h4>Vendedor</h4>
+    <hr />
+    <dl class="container">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataNascimento)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataNascimento)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BaseSalario)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BaseSalario)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Departamento)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Departamento.Name)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-dark">Editar</a>
+    <a asp-action="Index" class="voltar">Voltar a Lista</a>
+</div>

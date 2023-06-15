@@ -1,0 +1,62 @@
+﻿@model LojasWebMvc.Models.Vendedor
+
+@{
+    ViewData["Title"] = "Deletar";
+}
+
+<h2 class="title">@ViewData["Title"]</h2>
+
+<h3>Tem Certeza que deseja apagar?</h3>
+
+
+<style>
+    .h3 {
+        display: flex;
+        justify-content: center;
+    }
+    .title {
+        display: flex;
+        justify-content: center;
+    }
+
+    .voltar {
+        margin: auto 10px;
+    }
+</style>
+
+<div>
+    <h4>Vendedor</h4>
+    <hr/>
+    <dl class="container">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+        @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+        @Html.DisplayNameFor(model => model.DataNascimento)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataNascimento)
+        </dd>
+        <dt>
+        @Html.DisplayNameFor(model => model.BaseSalario)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BaseSalario)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-formaction="Id"/>
+        <input type="submit" value="Deletar" class="btn btn-dark" />
+        <a asp-action="Index" class="voltar">voltar a lista</a>
+    </form>
+</div>
